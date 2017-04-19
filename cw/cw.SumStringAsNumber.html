@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function sumStrings(a,b) {
+  const re = /[^\d]+/g;
+  const regexp = /^0+/;
+  if (a.match(re,'') || b.match(re,'')) return 0;
+  if (!a) a='0';
+  if (!b) b='0';
+  var resultString = '';
+  if (a.length>b.length){
+  	var stringA = a.replace(regexp,'').split('').reverse();
+    var stringB = b.replace(regexp,'').split('').reverse();
+  	}else{
+  	var stringA = b.replace(regexp,'').split('').reverse();
+    var stringB = a.replace(regexp,'').split('').reverse();
+	}
+  var longestLength = Math.max(stringA.length,stringB.length);
+  var offset = 0;
+  for (var i = 0; i < longestLength; i++) {
+  	var summ = 0;
+  	if (i < stringB.length) summ = stringA[i]*1+stringB[i]*1+offset;
+  		else summ = stringA[i]*1+offset;
+  	if (summ > 9) {summ -= 10;offset=1;}
+  	else {offset=0;}
+  	resultString = summ + resultString;
+  }
+  return (offset)?offset+resultString:resultString;
+}
+
+console.log(sumStrings('712392','937'));
+console.log(sumStrings('8797', '45'),8842);
+console.log(sumStrings('','5'));
+console.log(sumStrings('712569312664357328695151392','8100824045303269669937'));
+console.log(sumStrings('50095301248058391139327916261','81055900096023504197206408605') , '131151201344081895336534324866');
+console.log(sumStrings('712569312664357328695151392', '8100824045303269669937') == '712577413488402631964821329');
+console.log(sumStrings('00103', '08567')=='8670');
+	</script>
+</body>
+</html>

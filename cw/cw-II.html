@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+"zero,one,two,three,four,five,six,seven,eight,nine".split(',').forEach(
+	(number,index) => this[number] = (f = value => value) => f(index)
+	);
+
+var plus = (firstNumber) => (secondNumber) => secondNumber+firstNumber;
+var minus = (firstNumber) => (secondNumber) => secondNumber-firstNumber;
+var times = (firstNumber) => (secondNumber) => secondNumber*firstNumber;
+var dividedBy = (firstNumber) => (secondNumber) => secondNumber/firstNumber;
+
+console.log(seven(times(five())), 35);
+console.log(four(plus(nine())), 13);
+console.log(eight(minus(three())), 5);
+console.log(six(dividedBy(two())), 3);
+	</script>
+</body>
+</html>

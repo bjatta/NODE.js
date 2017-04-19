@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function add(n){
+	const fn = x => add (n + x);
+	fn.valueOf = () => n;
+	return fn;
+}
+
+console.log(add(1), 1);
+console.log(add(1)(2), 3);
+console.log(add(1)(2)(3), 6);
+console.log(add(1)(2)(3), 6);
+	</script>
+</body>
+</html>

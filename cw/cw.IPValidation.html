@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function isValidIP(str) {
+  const regex = /^0|\.0|\.\.|[^\d|\.|a-f]/g;
+  if (str.match(regex,'')) return false;
+  var numbersInAddress = str.split('.');
+  if (numbersInAddress.length==4){
+  	return numbersInAddress.every((a)=>256>a);
+  }
+  return false;
+}
+
+console.log('valid:');
+console.log(isValidIP('1.2.3.4'));
+console.log(isValidIP('123.45.67.89'));
+console.log('invalid:');
+console.log(isValidIP('1.2.3'));
+console.log(isValidIP('1.2.3.4.5'));
+console.log(isValidIP('123.456.78.90'));
+console.log(isValidIP('123.045.067.089'));
+console.log(isValidIP('023.045.067.089'));
+console.log(isValidIP('0.0.0.0'));
+console.log(isValidIP('a.b.c.d'));
+console.log(isValidIP('1.ff.2a.cb'));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function cakes(recipe, available) {
+  var countToPrepare = {};
+  var min = Infinity;
+  for (ingridient in recipe) {
+  	var is = Math.floor(available[ingridient]/recipe[ingridient]);
+  	if (!is) return 0;
+  	countToPrepare[ingridient]=is;
+  	if (min > is) min=is;
+  }
+  return min;
+}
+
+console.log(cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200})); 
+console.log(cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000}));
+
+	</script>
+</body>
+</html>

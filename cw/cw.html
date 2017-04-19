@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function calcSimple(number1,operation,number2){
+	switch (operation){
+		case '+':return number1 + number2;
+		case '-':return number1 - number2;
+		case '*':return number1 * number2;
+		case '/':return number1 / number2;
+	}
+}
+function zero() {
+	if (!arguments.length) return 0;
+	return calcSimple(0,arguments[0]['operation'],arguments[0]['value']);
+}
+function one() {
+	if (!arguments.length) return 1;
+	return calcSimple(1,arguments[0]['operation'],arguments[0]['value']);
+}
+function two() {
+	if (!arguments.length) return 2;
+	return calcSimple(2,arguments[0]['operation'],arguments[0]['value']);
+}
+function three() {
+	if (!arguments.length) return 3;
+	return calcSimple(3,arguments[0]['operation'],arguments[0]['value']);
+}
+function four() {
+	if (!arguments.length) return 4;
+	return calcSimple(4,arguments[0]['operation'],arguments[0]['value']);
+}
+function five() {
+	if (!arguments.length) return 5;
+	return calcSimple(5,arguments[0]['operation'],arguments[0]['value']);
+}
+function six() {
+	if (!arguments.length) return 6;
+	return calcSimple(6,arguments[0]['operation'],arguments[0]['value']);
+}
+function seven() {
+	if (!arguments.length) return 7;
+	return calcSimple(7,arguments[0]['operation'],arguments[0]['value']);
+}
+function eight() {
+	if (!arguments.length) return 8;
+	return calcSimple(8,arguments[0]['operation'],arguments[0]['value']);
+}
+function nine() {
+	if (!arguments.length) return 9;
+	return calcSimple(9,arguments[0]['operation'],arguments[0]['value']);
+}
+
+function plus() {
+	if (!arguments.length) return '+';
+	return {operation:'+',value:arguments[0]};
+}
+function minus() {
+	if (!arguments.length) return '-';
+	return {operation:'-',value:arguments[0]};
+}
+function times() {
+	if (!arguments.length) return '*';
+	return {operation:'*',value:arguments[0]};
+}
+function dividedBy() {
+	if (!arguments.length) return '/';
+	return {operation:'/',value:arguments[0]};
+}
+
+//console.log(' - = results below = -');
+console.log(seven(times(five())), 35);
+console.log(four(plus(nine())), 13);
+console.log(eight(minus(three())), 5);
+console.log(six(dividedBy(two())), 3);
+	</script>
+</body>
+</html>

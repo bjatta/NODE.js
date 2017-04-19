@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home work</title>
+
+</head>
+<body>
+<h1>Home wor fore lecture 1</h1>
+<div class="">
+    <script>
+        String.prototype.toJadenCase = function () {
+            var newArrStr=[];
+            var strArray = this
+                .split(" ")
+                .forEach(function (item){
+                    var str=item.split('');
+                    str.unshift(str.shift().toUpperCase());
+                    newArrStr.push(str.join(''));
+                });
+
+            return newArrStr.join(" ");
+        };
+    function sumTwoSmallestNumbers(numbers) {
+        var safeArray = numbers.sort(function (a,b) {
+            return a-b;
+        });
+        return safeArray[0]+safeArray[1];
+    };
+    console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+    console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]));
+    console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
+    console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]));
+    console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
+
+    function isTriangle(a,b,c){
+        var triangle = [a,b,c].sort((a,b) => a-b);
+        return (triangle[0] + triangle[1]) > triangle[2];
+    }
+
+    console.log(isTriangle(1,2,2));
+    console.log(isTriangle(7,2,2));
+    console.log(isTriangle(3,4,5));
+    </script>
+</div>
+<script src="../cw/codeWars.js"></script>
+</body>
+</html>

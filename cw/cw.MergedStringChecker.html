@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function isMerge(s, part1, part2) {
+  var tail = (part1.length >= part2.length)
+    ?part1.split('').slice(part2.length)
+    :part2.split('').slice(part1.length-part2.length);
+  var minLength = Math.min(part1.length,part2.length);
+  var str ='';
+  for (var i = 0; i < minLength; i++) {
+  	str+=part1.split('')[i]+part2.split('')[i]
+  }
+  str+=tail.join('');
+  return (s == str);
+}
+/*Test.expect(isMerge('codewars', 'code', 'wars'));
+Test.expect(isMerge('codewars', 'cdw', 'oears'));
+Test.expect(!isMerge('codewars', 'cod', 'wars'));
+*/
+console.log(isMerge('codewars', 'code', 'wars'));
+console.log(isMerge('codewars', 'cdw', 'oears'));
+console.log(!isMerge('codewars', 'cod', 'wars'));
+
+	</script>
+</body>
+</html>

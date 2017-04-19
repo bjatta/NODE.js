@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function pigIt(str){
+	var newString = [];
+	console.log(str.split(' ')
+		.forEach((word)=>{
+		  var wordsChars = word.split('');
+		  wordsChars.push(wordsChars.shift());
+		  newString.push(wordsChars.join('')+'ay');
+		})
+		);
+return newString.join(' ');
+}
+
+console.log(pigIt('Pig latin is cool'),'igPay atinlay siay oolcay');
+console.log(pigIt('This is my string'),'hisTay siay ymay tringsay');
+
+	</script>
+</body>
+</html>

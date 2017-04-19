@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+function formatDuration (seconds) {
+	if (!seconds) return 'now';
+  var times = {
+    year: 31536000,
+    day:  86400,
+    hour: 3600,
+    minute: 60,
+    second: 1
+  }
+var result = {};
+var keys = [];
+var i=0;
+  for (key in times){
+  	var timesPeriod = Math.floor(seconds/times[key]);
+  	if (timesPeriod) {
+  		result[key]=timesPeriod;
+  		seconds-=timesPeriod*times[key];
+  		keys.push(key);
+  	}
+  }
+  keys.reverse();
+  var str = '';
+  if (keys.length > 1) {
+    	for (var i = keys.length-1 ; i > 0; i--) {
+    		if (str) str+=', ';
+    		str+= result[keys[i]] + ' ' + keys[i];
+    		str+=((result[keys[i]]>1)?'s':'');
+    	}
+    	str+= ' and ';
+    }
+  str+= result[keys[0]]+' '+keys[0];
+  str+=(result[keys[0]]>1)?'s':'';
+  return str;
+}
+
+/*Test.assertEquals(formatDuration(1), "1 second");
+Test.assertEquals(formatDuration(62), "1 minute and 2 seconds");
+Test.assertEquals(formatDuration(120), "2 minutes");
+Test.assertEquals(formatDuration(3600), "1 hour");
+Test.assertEquals(formatDuration(3662), "1 hour, 1 minute and 2 seconds");
+*/
+console.log(formatDuration(1) == "1 second");
+console.log(formatDuration(62) == "1 minute and 2 seconds");
+console.log(formatDuration(120) == "2 minutes");
+console.log(formatDuration(3600) == "1 hour");
+console.log(formatDuration(3662) == "1 hour, 1 minute and 2 seconds");
+
+	</script>
+</body>
+</html>
