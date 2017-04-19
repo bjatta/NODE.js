@@ -2,11 +2,11 @@
  * Created by Bjatta on 19.04.2017. from 11.03
  */
 ((...vars)=> {
-    let array15a = [];
-    let array15b = [];
-    let array15c = [];
-    let array15d = [];
-    let array15e = [];
+    var array15a = [];
+    var array15b = [];
+    var array15c = [];
+    var array15d = [];
+    var array15e = [];
 
     for (let i=0;i<16;i++) array15a.push(Math.random().toFixed(6)*1);
     console.log('а',array15a);
