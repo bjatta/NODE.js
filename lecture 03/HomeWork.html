@@ -14,18 +14,84 @@
             <h3></h3>
             <p class="task text">1.Известны две скорости: одна в километрах в час, другая — в метрах в секунду.</p>
             <p class="task question">Какая из скоростей больше?</p>
-            <script src=""></script>
+            <script src="js/hw03.if.01.js"></script>
+            <pre><code><br><div class="code">
+((speedInKmH,speedInMS) => {
+    let speedDiff = speedInKmH - speedInMS*3.6;
+
+    if (!speedDiff) {
+        console.log( speedInKmH,'km/h both value are equal',
+                speedInMS +' m/s');
+    else {
+        if (speedDiff >0){
+              console.log( speedInKmH,'km/h more than ',
+                speedInMS +' m/s on: '+speedDiff);
+            } else {
+            console.log( speedInKmH,'km/h less than ',
+                speedInMS +' m/s on: '+speedDiff);
+            }
+        }
+})
+(Math.random()*100,
+Math.random()*30);
+            </div></code></pre>
         </div>
         <div class="example">
             <p class="task text">2. Даны объемы и массы двух тел из разных материалов.</p>
             <p class="task question">Материал какого из тел имеет большую плотность?</p>
-            <script src=""></script>
+            <script src="js/hw03.if.02.js"></script>
+            <pre><code><br><div class="code">
+((v1,m1,v2,m2) => {
+    let density1 = (m1/v1).toFixed(2)*1;
+    let density2 = (m2/v2).toFixed(2)*1;
+    let direction = 'less';
+        if (density1 > density2) { direction = 'more'};
+        console.log ( ' first body density: '
+            + density1 + ' kg/m3 is '+direction+
+            ' than second body density: '+density2+' kg/m3.');
+        console.log(' first body is: '+v1
+            + ' m3 volume and mass '+m1+' kg.');
+        console.log('second body is: '+v2
+            + ' m3 volume and mass '+m2+' kg.');
+    })
+(Math.round(Math.random()*3)+0.01,
+ Math.round(Math.random()*1500),
+ Math.round(Math.random()*3)+0.01,
+ Math.round(Math.random()*1500)
+);
+            </div></code></pre>
         </div>
-        <div class="example">
-            <p class="task text">5.Получить на ввод количество рублей и копеек и вывести в правильной форме, например:</p>
-            <p class="task question">3 рубля, 1 рубль 25 копеек, 3 копейки <sup><strong>*</strong></sup></p>
-            <script src=""></script>
-        </div>
+    <div class="example">
+        <p class="task text">5.Получить на ввод количество рублей и копеек и вывести в правильной форме, например:</p>
+        <p class="task question">3 рубля, 1 рубль 25 копеек, 3 копейки <sup><strong>*</strong></sup></p>
+        <script src="js/hw03.if.03.js"></script>
+        <pre><code><br><div class="code">
+((bankNotes,coins) => {
+    let bankNotesString = '';
+    let coinsString = '';
+
+    switch (bankNotes%10){
+        case 1: bankNotesString = ' рубль '; break;
+        case 2:
+        case 3:
+        case 4: bankNotesString = ' рубля '; break;
+        default: bankNotesString = ' рублей ';
+    }
+    switch (coins%10){
+        case 1: coinsString = ' копейка '; break;
+        case 2:
+        case 3:
+        case 4: coinsString = ' копейки '; break;
+        default: coinsString = ' копеeк ';
+    }
+    console.log(bankNotes+bankNotesString
+                +coins+coinsString);
+})
+(Math.round(Math.random()*100),
+Math.round(Math.random()*100)
+);
+    </div></code></pre>
+    </div>
     </div>
     <div class="column">
         <h2>task for <strong>while</strong></h2><hr>
