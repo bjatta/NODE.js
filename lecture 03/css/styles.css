@@ -1,0 +1,40 @@
+body * {
+    box-sizing: border-box;
+    font-family: Helvetica, Tahoma;
+}
+
+#main-container.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.column {
+    width: 30%;
+    position: relative;
+    float: left;
+    padding: 0.5em;
+}
+.row {
+     width: 100%;
+     position: relative;
+     float: left;
+ }
+h1,h2,h3 {
+    padding-left: 3em;
+}
+p.question {
+    font-weight: bold;
+}
+.example {
+    margin-top: 0.2em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-color: rgba(164,153,187,0.55);
+    border: thin;
+    border-radius: 2em;
+}
+.task.description {
+    opacity: 0.7;
+    font-size: 0.7em;
+}
