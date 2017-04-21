@@ -5,7 +5,6 @@
     <title>NODE.js Zamoulko home work 03</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-</head>
 <body>
 <section id="main-container" class="main-container">
 <h1>NODE.js Zamoulko home work 03</h1>
@@ -16,7 +15,7 @@
             <p class="task text">1.Известны две скорости: одна в километрах в час, другая — в метрах в секунду.</p>
             <p class="task question">Какая из скоростей больше?</p>
             <script src="js/hw03.if.01.js"></script>
-            <pre><code><div class="code">((speedInKmH,speedInMS) => {
+            <pre onclick="toggleCode(this);"><code><div class="code">((speedInKmH,speedInMS) => {
     let speedDiff = speedInKmH - speedInMS*3.6;
 
     if (!speedDiff) {
@@ -35,12 +34,13 @@
 (Math.random()*100,
 Math.random()*30);
             </div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
         </div>
         <div class="example">
             <p class="task text">2. Даны объемы и массы двух тел из разных материалов.</p>
             <p class="task question">Материал какого из тел имеет большую плотность?</p>
             <script src="js/hw03.if.02.js"></script>
-            <pre><code><div class="code">((v1,m1,v2,m2) => {
+            <pre onclick="toggleCode(this);"><code><div class="code">((v1,m1,v2,m2) => {
     let density1 = (m1/v1).toFixed(2)*1;
     let density2 = (m2/v2).toFixed(2)*1;
     let direction = 'less';
@@ -59,12 +59,13 @@ Math.random()*30);
  Math.round(Math.random()*1500)
 );
             </div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
         </div>
     <div class="example">
         <p class="task text">5.Получить на ввод количество рублей и копеек и вывести в правильной форме, например:</p>
         <p class="task question">3 рубля, 1 рубль 25 копеек, 3 копейки <sup><strong>*</strong></sup></p>
         <script src="js/hw03.if.03.js"></script>
-        <pre><code><div class="code">((bankNotes,coins) => {
+        <pre onclick="toggleCode(this);"><code><div class="code">((bankNotes,coins) => {
     let bankNotesString = '';
     let coinsString = '';
 
@@ -89,6 +90,7 @@ Math.random()*30);
 Math.round(Math.random()*100)
 );
     </div></code></pre>
+        <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
     </div>
     </div>
     <div class="column">
@@ -97,7 +99,7 @@ Math.round(Math.random()*100)
             <p class="task text">1.Генерировать случайные числа от 0 до 10 до тех пор, пока не выпадет 0 или 10.</p>
             <p class="task question"> Вывести числа, их сумму и количество.</p>
             <script src="js/hw03.while.01.js"></script>
-            <pre><code><div class="code">(() => {
+            <pre onclick="toggleCode(this);"><code><div class="code">(() => {
     let randomNumber = Math.round(Math.random()*10);
     let i = 0;
     let sum = randomNumber;
@@ -110,12 +112,14 @@ Math.round(Math.random()*100)
         console.log(i,randomNumber);
     }
     console.log('total: ' + i +' times and value: '+ sum);
-})();</div></code></pre></div>
+})();</div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
+        </div>
         <div class="example">
             <p class="task text">2. Получить массив,  состоящий  из  максимального  количества  первых натуральных чисел, сумма которых не более заданного n.</p>
             <p class="task question"><sup><strong>*</strong></sup></p>
             <script src="js/hw03.while.02.js"></script>
-            <pre><code><div class="code">((n) => {
+            <pre onclick="toggleCode(this);"><code><div class="code">((n) => {
     let sum=1;
     let i = 1;
     let numbersArray =[];
@@ -128,13 +132,14 @@ Math.round(Math.random()*100)
     }
     console.log(i,sum,numbersArray);
 })(Math.round(Math.random()*121));</div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
         </div>
         <div class="example">
             <p class="task text">4.Алгоритм Евклида. Поиск наибольшего общего делителя. В самом простом случае алгоритм Евклида применяется к паре положительных целых чисел и формирует новую пару, которая состоит из меньшего числа и разницы между большим и меньшим числом.</p>
             <p class="task question"><sup><strong>**</strong></sup></p>
             <p class="task description">Процесс повторяется, пока числа не станут равными. Найденное число и есть наибольший общий делитель исходной пары.</p>
             <script src="js/hw03.while.03.js"></script>
-            <pre><code><div class="code">((a,b) => {
+            <pre onclick="toggleCode(this);"><code><div class="code">((a,b) => {
     console.log('first: ',a,b);
     while (a%b != 0 && a >0 && b>0){
         [a,b] = [Math.max(a,b)%Math.min(a,b)
@@ -143,6 +148,7 @@ Math.round(Math.random()*100)
     }
     console.log('result: ',a,b);
 })(a,b);</div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
         </div>
     </div>
     <div class="column">
@@ -151,27 +157,29 @@ Math.round(Math.random()*100)
             <p class="task text">1.Получить сумму кубов первых <strong>n</strong> натуральных чисел</p>
             <p class="task question"></p>
             <script src="js/hw03.for.01.js"></script>
-            <pre><code><div class="code">((n) => {
+            <pre onclick="toggleCode(this);"><code><div class="code">((n) => {
     let sum = 0;
     for (let i=1; i <= n; i++){
         sum+= Math.pow(i,3);
     }
     console.log(n,sum);
 })(Math.round(Math.random()*20)+1);</div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
         </div>
         <div class="example">
             <p class="task text">2.Ввести строку, состоящую из нескольких слов, разделенных пробелами.</p>
             <p class="task question">Нарезать строку в массив по словам и вывести ее поэлементно – по одному слову в строке.<sup><strong>*</strong></sup></p>
             <script src="js/hw03.for.02.js"></script>
-            <pre><code><div class="code">let wordsArray = str.split(' ');
+            <pre onclick="toggleCode(this);"><code><div class="code">let wordsArray = str.split(' ');
     for (let i=0; i < wordsArray.length; i++)
                 console.log(i+':'+wordsArray[i]);</div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
         </div>
         <div class="example">
             <p class="task text">6.Построить Треугольник Паскаля до n-й строки.</p>
             <p class="task question"><sup><strong>**</strong></sup></p>
             <script src="js/hw03.for.03.js"></script>
-            <pre><code><div class="code">((n)=> {
+            <pre onclick="toggleCode(this);"><code><div class="code">((n)=> {
     let triangle = [];
     let f = (n) => {
         if (!n) return 1;
@@ -189,6 +197,7 @@ Math.round(Math.random()*100)
         console.log(triangle);
     }
 })(Math.round(Math.random()*15));</div></code></pre>
+            <div class="code image hidden"><img src="img/hw03.if.01.png"></div>
         </div>
     </div>
     <div class="row">
@@ -198,7 +207,7 @@ Math.round(Math.random()*100)
             </p>
             <p class="task question">Требуется найти все совершенные числа от М до N.<sup><strong>**</strong></sup></p>
             <script src="js/hw03.add.01.js"></script>
-            <pre><code><div class="code">(()=>{
+            <pre onclick="toggleCode(this);"><code><div class="code">(()=>{
   let m = 1;
   let n = 9000;
   let perfects = [];
@@ -216,13 +225,14 @@ Math.round(Math.random()*100)
   }
 }
 )();</div></code></pre>
+            <div class="code image hidden"><img src="img/03.add.01.png"></div>
         </div>
         <div class="example">
             <p class="task text">3.Заданы день и месяц рождения, а также текущие день, месяц и год.</p>
             <p class="task question">Определить, сколько дней осталось до дня рождения.<sup><strong>*</strong></sup></p>
             <p class="task description"><strong>Примечание.</strong> Високосные годы —это те, номер которых делится на 400, а также те, номер которых делится на 4, но не делится на 100.</p>
             <script src="js/hw03.add.03.js"></script>
-            <pre><code><div class="code">(()=> {
+            <pre onclick="toggleCode(this);"><code><div class="code">(()=> {
     let birthdate = {
         year: new Date().getFullYear(),
         month: Math.round(Math.random() * 11) + 1,
@@ -251,12 +261,13 @@ Math.round(Math.random()*100)
             + ' days to: ' + birthdate.getDate());
 }
 )();</div></code></pre>
+            <div class="code image hidden"><img src="img/03.add.03.png"></div>
         </div>
         <div class="example">
             <p class="task text">4.Даны  координаты  вершин  треугольника  и  координаты  точки.</p>
             <p class="task question">Нужно определить, лежит ли точка внутри треугольника, на стороне треугольни-ка или вне треугольника.<sup><strong>**</strong></sup></p>
             <script src="js/hw03.add.04.js"></script>
-            <pre><code><div class="code">(()=> {
+            <pre onclick="toggleCode(this);"><code><div class="code">(()=> {
     let r = (n) => Math.round(Math.random()*n);
     let p0 = [r(15),r(15)];
     let p1 = [r(15),r(15)];
@@ -281,6 +292,7 @@ Math.round(Math.random()*100)
     }
 }
 )();</div></code></pre>
+            <div class="code image hidden"><img src="img/03.add.04.png"></div>
         </div>
         <div class="example">
             <p class="task text">5.Не используя встроенные методы и функции сортировки вывести в порядке возрастания все несократимые дроби, заключенные между 0 и 1, знаменатели которых не превышают N.</p>
@@ -288,7 +300,7 @@ Math.round(Math.random()*100)
             <p class="task question">2)Не  используя массивы<sup><strong>***</strong></sup></p>
             <p class="task description">(Олимпиадная  задача  с  республиканской олимпиады по информатике для школьников г. Минск,1989 год –10 класс, практическая часть)</p>
             <script src="js/hw03.add.05.js"></script>
-            <pre><code><div class="code">((n)=> {
+            <pre onclick="toggleCode(this);"><code><div class="code">((n)=> {
     var result = [];
     console.log('task #5: ... for n: '+n)
     for (let i = 1; i <= n; i++){
@@ -301,8 +313,10 @@ Math.round(Math.random()*100)
     console.log(result.sort((a,b)=>(a.value - b.value)).map((el)=>el.up+'/'+el.down).join(' '));
 }
 )(Math.round(Math.random()*15)+1);</div></code></pre>
+            <div class="code image hidden"><img src="img/03.add.05.png"></div>
         </div>
     </div>
 </section>
+<script src="js/domOperation.js"></script>
 </body>
 </html>

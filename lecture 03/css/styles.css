@@ -43,3 +43,9 @@ div.code {
     font-family: "Courier New";
     overflow-x: auto;
 }
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
