@@ -256,7 +256,31 @@ Math.round(Math.random()*100)
             <p class="task text">4.Даны  координаты  вершин  треугольника  и  координаты  точки.</p>
             <p class="task question">Нужно определить, лежит ли точка внутри треугольника, на стороне треугольни-ка или вне треугольника.<sup><strong>**</strong></sup></p>
             <script src="js/hw03.add.04.js"></script>
-            <pre><code><div class="code"></div></code></pre>
+            <pre><code><div class="code">(()=> {
+    let r = (n) => Math.round(Math.random()*n);
+    let p0 = [r(15),r(15)];
+    let p1 = [r(15),r(15)];
+    let p2 = [r(15),r(15)];
+    let p3 = [r(15),r(15)];
+
+    console.log('task #4: ',p0);
+    console.log('triangle:',p1,p2,p3);
+
+    let a = (p1[0] - p0[0])*(p2[1] - p1[1]) - (p2[0] - p1[0])*(p1[1] - p0[1]);
+    let b = (p2[0] - p0[0])*(p3[1] - p1[1]) - (p3[0] - p2[0])*(p2[1] - p0[1]);
+    let c = (p3[0] - p0[0])*(p1[1] - p1[1]) - (p1[0] - p3[0])*(p3[1] - p0[1]);
+
+    console.log(a,b,c);
+    if (a && b && c) {
+        if ((a < 0 && b < 0 && c < 0)
+         || (a > 0 && b > 0 && c > 0)) console.log ('inside');
+        else console.log('outside');
+    }
+    else {
+        console.log(' on a side!');
+    }
+}
+)();</div></code></pre>
         </div>
         <div class="example">
             <p class="task text">5.Не используя встроенные методы и функции сортировки вывести в порядке возрастания все несократимые дроби, заключенные между 0 и 1, знаменатели которых не превышают N.</p>
