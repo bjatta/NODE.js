@@ -6,9 +6,9 @@
     let i = 0;
     let sum = randomNumber;
     console.log(i,randomNumber);
-    while ((randomNumber != 0)&&(randomNumber != 10)) {
+    while ((randomNumber !== 0)&&(randomNumber !== 10)) {
         randomNumber = Math.round(Math.random()*10);
-        sum+=randomNumber
+        sum+=randomNumber;
         i++;
         console.log(i,randomNumber);
     }
