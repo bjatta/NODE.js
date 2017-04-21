@@ -197,20 +197,65 @@ Math.round(Math.random()*100)
             <p class="task text">        1.Число называется совершенным, если оно равно сумме всех своих делителей, меньших его самого.
             </p>
             <p class="task question">Требуется найти все совершенные числа от М до N.<sup><strong>**</strong></sup></p>
-            <script src=""></script>
-            <pre><code><div class="code"></div></code></pre>
+            <script src="js/hw03.add.01.js"></script>
+            <pre><code><div class="code">(()=>{
+  let m = 1;
+  let n = 9000;
+  let perfects = [];
+  console.log('perfect numbers in range:',m,n);
+  for (let i=m;i<=n;i++){
+      let sum = 0;
+      let dividers = [];
+        for (let j=1;j < i;j++){
+            if (i%j==0){
+                sum += j;
+                dividers.push(j);
+            }
+        }
+    if (sum == i) console.log(i,dividers);
+  }
+}
+)();</div></code></pre>
         </div>
         <div class="example">
             <p class="task text">3.Заданы день и месяц рождения, а также текущие день, месяц и год.</p>
             <p class="task question">Определить, сколько дней осталось до дня рождения.<sup><strong>*</strong></sup></p>
             <p class="task description"><strong>Примечание.</strong> Високосные годы —это те, номер которых делится на 400, а также те, номер которых делится на 4, но не делится на 100.</p>
-            <script src=""></script>
-            <pre><code><div class="code"></div></code></pre>
+            <script src="js/hw03.add.03.js"></script>
+            <pre><code><div class="code">(()=> {
+    let birthdate = {
+        year: new Date().getFullYear(),
+        month: Math.round(Math.random() * 11) + 1,
+        day: Math.round(Math.random() * 30) + 1
+    };
+    birthdate.getDate = () =>
+                birthdate.year+'/'
+       + ('0' + birthdate.month).slice(-2) + '/'
+       + ('0' + birthdate.day).slice(-2);
+
+    let d = new Date();
+    let currentDate = {
+        year: d.getFullYear(),
+        month: d.getMonth(),
+        day: d.getDay()
+    };
+    let bd = new Date(birthdate.getDate());
+
+    console.log('left '
+        + Math.round((bd - d) / (1000 * 60 * 60 * 24))
+        + ' days to: ' + birthdate.getDate());
+
+    if (bd-d < 0)
+        console.log('till next left '
+            + (Math.round((bd - d) / (1000 * 60 * 60 * 24))+365)
+            + ' days to: ' + birthdate.getDate());
+}
+)();</div></code></pre>
         </div>
         <div class="example">
             <p class="task text">4.Даны  координаты  вершин  треугольника  и  координаты  точки.</p>
             <p class="task question">Нужно определить, лежит ли точка внутри треугольника, на стороне треугольни-ка или вне треугольника.<sup><strong>**</strong></sup></p>
-            <script src=""></script>
+            <script src="js/hw03.add.04.js"></script>
             <pre><code><div class="code"></div></code></pre>
         </div>
         <div class="example">
@@ -218,7 +263,7 @@ Math.round(Math.random()*100)
             <p class="task question">1) Используя массивы.<sup><strong>**</strong></sup></p>
             <p class="task question">2)Не  используя массивы<sup><strong>***</strong></sup></p>
             <p class="task description">(Олимпиадная  задача  с  республиканской олимпиады по информатике для школьников г. Минск,1989 год –10 класс, практическая часть)</p>
-            <script src=""></script>
+            <script src="js/hw03.add.05.js"></script>
             <pre><code><div class="code"></div></code></pre>
         </div>
     </div>
