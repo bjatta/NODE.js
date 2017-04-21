@@ -41,5 +41,5 @@ p.question {
 div.code {
     font-size: 0.5em;
     font-family: "Courier New";
-    overflow-wrap: hyphenate;
+    overflow-x: auto;
 }

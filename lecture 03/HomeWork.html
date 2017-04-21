@@ -133,8 +133,16 @@ Math.round(Math.random()*100)
             <p class="task text">4.Алгоритм Евклида. Поиск наибольшего общего делителя. В самом простом случае алгоритм Евклида применяется к паре положительных целых чисел и формирует новую пару, которая состоит из меньшего числа и разницы между большим и меньшим числом.</p>
             <p class="task question"><sup><strong>**</strong></sup></p>
             <p class="task description">Процесс повторяется, пока числа не станут равными. Найденное число и есть наибольший общий делитель исходной пары.</p>
-            <script src=""></script>
-            <pre><code><div class="code"></div></code></pre>
+            <script src="js/hw03.while.03.js"></script>
+            <pre><code><div class="code">((a,b) => {
+    console.log('first: ',a,b);
+    while (a%b != 0 && a >0 && b>0){
+        [a,b] = [Math.max(a,b)%Math.min(a,b)
+                ,Math.min(a,b)];
+        console.log('inner: ',a,b);
+    }
+    console.log('result: ',a,b);
+})(a,b);</div></code></pre>
         </div>
     </div>
     <div class="column">
@@ -154,7 +162,7 @@ Math.round(Math.random()*100)
         <div class="example">
             <p class="task text">2.Ввести строку, состоящую из нескольких слов, разделенных пробелами.</p>
             <p class="task question">Нарезать строку в массив по словам и вывести ее поэлементно – по одному слову в строке.<sup><strong>*</strong></sup></p>
-            <script src=""></script>
+            <script src="js/hw03.for.02.js"></script>
             <pre><code><div class="code">let wordsArray = str.split(' ');
     for (let i=0; i < wordsArray.length; i++)
                 console.log(i+':'+wordsArray[i]);</div></code></pre>
@@ -162,8 +170,25 @@ Math.round(Math.random()*100)
         <div class="example">
             <p class="task text">6.Построить Треугольник Паскаля до n-й строки.</p>
             <p class="task question"><sup><strong>**</strong></sup></p>
-            <script src="js/hw03.for.02.js"></script>
-            <pre><code><div class="code"></div></code></pre>
+            <script src="js/hw03.for.03.js"></script>
+            <pre><code><div class="code">((n)=> {
+    let triangle = [];
+    let f = (n) => {
+        if (!n) return 1;
+        let f = 1;
+        for (let i=1;i<=n;i++){
+            f*=i;
+        }
+        return f;
+    };
+    for (let i=0; i < n ; i++){
+        let triangle=[];
+        for (let j=0 ;j < i+1; j++){
+            triangle[j]=f(i) / f(j) / f(i - j);
+        }
+        console.log(triangle);
+    }
+})(Math.round(Math.random()*15));</div></code></pre>
         </div>
     </div>
     <div class="row">
@@ -172,12 +197,6 @@ Math.round(Math.random()*100)
             <p class="task text">        1.Число называется совершенным, если оно равно сумме всех своих делителей, меньших его самого.
             </p>
             <p class="task question">Требуется найти все совершенные числа от М до N.<sup><strong>**</strong></sup></p>
-            <script src=""></script>
-            <pre><code><div class="code"></div></code></pre>
-        </div>
-        <div class="example">
-            <p class="task text">2.Получить на ввод количество рублей и копеек и вывести в правильной форме в виде текста, например:</p>
-            <p class="task question">три рубля, одиннадцать рублей тридцать пять копеек, двадцать две копейки<sup><strong>**</strong></sup></p>
             <script src=""></script>
             <pre><code><div class="code"></div></code></pre>
         </div>
