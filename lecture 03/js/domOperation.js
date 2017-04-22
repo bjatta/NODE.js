@@ -1,14 +1,19 @@
 /**
  * Created by Bjatta on 21.04.2017.
  */
-function toggleCode(el) {
-    let nextEl = el.nextElementSibling;
+function toggleCode(el,pictureName) {
+    let nextEl = document.querySelector('div[id="full-screen"]');
+    let body   = document.querySelector('section[id="main-container"]');
+    pictureName = pictureName || 'hw03.if.01';
+    nextEl.innerHTML = '<span class="Centerer"></span><img class="Centered full-screen-image" src="img/' + pictureName + '.png">';
     if (hasClass(nextEl,'visible')) {
-        removeClass(el.nextElementSibling,'visible');
-        addClass(el.nextElementSibling,'hidden');
+        removeClass(nextEl,'visible');
+        removeClass(body,'muted');
+        addClass(nextEl,'hidden');
     }else{
-        removeClass(el.nextElementSibling,'hidden');
-        addClass(el.nextElementSibling,'visible');
+        removeClass(nextEl,'hidden');
+        addClass(nextEl,'visible');
+        addClass(body,'muted');
     }
 
 }

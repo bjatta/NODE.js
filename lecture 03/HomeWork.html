@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 <body>
+<div id="full-screen" class="code image hidden full-screen" onclick="toggleCode(this,'hw03.if.01');"></div>
 <section id="main-container" class="main-container">
 <h1>NODE.js Zamoulko home work 03</h1>
     <div class="column">
@@ -15,7 +16,7 @@
             <p class="task text">1.Известны две скорости: одна в километрах в час, другая — в метрах в секунду.</p>
             <p class="task question">Какая из скоростей больше?</p>
             <script src="js/hw03.if.01.js"></script>
-            <pre onclick="toggleCode(this);"><code><div class="code">((speedInKmH,speedInMS) => {
+            <pre onclick="toggleCode(this,'hw03.if.01');"><code><div class="code">((speedInKmH,speedInMS) => {
     let speedDiff = speedInKmH - speedInMS*3.6;
 
     if (!speedDiff) {
@@ -40,7 +41,7 @@ Math.random()*30);
             <p class="task text">2. Даны объемы и массы двух тел из разных материалов.</p>
             <p class="task question">Материал какого из тел имеет большую плотность?</p>
             <script src="js/hw03.if.02.js"></script>
-            <pre onclick="toggleCode(this);"><code><div class="code">((v1,m1,v2,m2) => {
+            <pre onclick="toggleCode(this,'hw03.if.02');"><code><div class="code">((v1,m1,v2,m2) => {
     let density1 = (m1/v1).toFixed(2)*1;
     let density2 = (m2/v2).toFixed(2)*1;
     let direction = 'less';
@@ -59,13 +60,12 @@ Math.random()*30);
  Math.round(Math.random()*1500)
 );
             </div></code></pre>
-            <div class="code image hidden"><img src="img/hw03.if.02.png"></div>
         </div>
     <div class="example">
         <p class="task text">5.Получить на ввод количество рублей и копеек и вывести в правильной форме, например:</p>
         <p class="task question">3 рубля, 1 рубль 25 копеек, 3 копейки <sup><strong>*</strong></sup></p>
         <script src="js/hw03.if.03.js"></script>
-        <pre onclick="toggleCode(this);"><code><div class="code">((bankNotes,coins) => {
+        <pre onclick="toggleCode(this,'hw03.if.03');"><code><div class="code">((bankNotes,coins) => {
     let bankNotesString = '';
     let coinsString = '';
 
@@ -90,7 +90,6 @@ Math.random()*30);
 Math.round(Math.random()*100)
 );
     </div></code></pre>
-        <div class="code image hidden"><img src="img/hw03.if.03.png"></div>
     </div>
     </div>
     <div class="column">
