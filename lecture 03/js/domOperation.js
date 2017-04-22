@@ -4,7 +4,7 @@
 function toggleCode(el,pictureName) {
     let nextEl = document.querySelector('div[id="full-screen"]');
     let body   = document.querySelector('section[id="main-container"]');
-    pictureName = pictureName || 'hw03.if.01';
+    pictureName = pictureName || '';
     nextEl.innerHTML = '<span class="Centerer"></span><img class="Centered full-screen-image" src="img/' + pictureName + '.png">';
     if (hasClass(nextEl,'visible')) {
         removeClass(nextEl,'visible');
