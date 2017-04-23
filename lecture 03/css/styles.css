@@ -56,27 +56,13 @@ div#full-screen.code.full-screen{
     position: fixed;
     z-index: 2;
     opacity: 1;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-out;
     width: 100%;
     height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .muted {
     opacity: 0.1;
-    transition: opacity 1s ease-in-out;
-}
-img.full-screen-image {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-.Centerer
-{
-    display: inline-block;
-    height: 10%;
-    vertical-align: middle;
-}
-.Centered
-{
-    display: inline-block;
-    vertical-align: middle;
+    transition: opacity 1s ease-in;
 }
