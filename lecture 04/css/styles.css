@@ -79,8 +79,9 @@ div#full-screen.code.full-screen{
     display: inline-block;
     border-radius: 0.3em;
     font-weight: bold;
-    padding: 0.1em;
+    padding: 0.05em;
     background: white;
+    margin: 0em;
 }
 div.red-text{
     color: red;

@@ -15,7 +15,7 @@
         }
     }
     let cc = cardBox();
-    let c = [cc(),cc(),cc()];
+    let c = [cc(),cc(),cc(),cc(),cc(),];
     let b = [];
     c.forEach((i)=>console.log(i));
     for (let j=0;j<6;j++) {
@@ -26,20 +26,22 @@
 //            console.log('[' + j + ',' + i + ']:',card,b[i],c[i]);
         }
     }
+    let offset_x = 1.8;
+    let offset_y = 3.1;
     b.forEach((i,index)=>{
-        let mainSection = document.querySelector('div.column');
-        let row = addDE(mainSection,'section','&nbsp;','row');
-        let showCardBox = (cardText,index)=>{
-            const regex = /[♢♡]/g;
-            cardText.match(regex)
-                ?addDE(row,'div',cardText,'red-text cards',index*1.7,index)
-                :addDE(row,'div',cardText,'cards',index*1.7,index);
-        };
-        console.log(i);
-        i.forEach(showCardBox);
-        row = addDE(document.querySelector('body'),'div','','column2');
-        row = addDE(row,'section','','row');
-        c[index].forEach(showCardBox);
+    let mainSection = document.querySelector('div.column');
+    let row = addDE(mainSection,'section','','row',0,index*offset_y);
+    let showCardBox = (cardText,index)=>{
+        const regex = /[♢♡]/g;
+        cardText.match(regex)
+            ?addDE(row,'div',cardText,'red-text cards',index*offset_x,0,index)
+            :addDE(row,'div',cardText,'cards',index*offset_x,0,index);
+    };
+    console.log(i);
+    i.forEach(showCardBox);
+    row = addDE(document.querySelector('body'),'div','','column2');
+    row = addDE(row,'section','','row',0,b.length*offset_y+1+index*offset_y);
+    c[index].forEach(showCardBox);
     });
 }
 )(ra());

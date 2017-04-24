@@ -53,7 +53,7 @@ function removeClass(el, className) {
         return a;
     }
     window.ra?window._ra= _ra_:window.ra= _ra_;
-    let _newDOMdiv_ = (_DOMelement,_typeOfDOMElement_,text,_class_,_left_,_zIndex_) => {
+    let _newDOMdiv_ = (_DOMelement,_typeOfDOMElement_,text,_class_,_left_,_top_,_zIndex_) => {
         _typeOfDOMElement_ = _typeOfDOMElement_ || 'div';
         let obj = document.createElement(_typeOfDOMElement_);
         obj = obj || document.createElement('div');
@@ -61,12 +61,14 @@ function removeClass(el, className) {
         _class_ = _class_ || 'cards';
         _left_ = _left_ || 0;
         _zIndex_ = _zIndex_ || 0;
+        _top_ = _top_ || 0;
         obj.appendChild(text);
         _DOMelement = _DOMelement || document.querySelector('body');
         _DOMelement.appendChild(obj);
         obj.className+=_class_;
-        obj.style.left=_left_+'em';
-        obj.style.zIndex = _zIndex_;
+        _top_?obj.style.top = _top_+'em':{};
+        _left_?obj.style.left=_left_+'em':{};
+        _zIndex_?obj.style.zIndex = _zIndex_:{};
         return obj;
     }
     window.addDE?window._addDE=_newDOMdiv_:window.addDE=_newDOMdiv_;
