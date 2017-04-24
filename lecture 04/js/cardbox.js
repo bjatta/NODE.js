@@ -17,7 +17,7 @@
     let b = []; // array for played cards
     c.forEach((i) => console.log(i));
     for (let i = 0; i < c.length; i++) {
-        for (let j = 0; j < r(18); j++) {
+        for (let j = 0; j < r(36); j++) {
             let card = c[i].splice(r(c[i].length - 1), 1)[0];
             b[i] = b[i] || [];
             b[i].push(card);
@@ -25,7 +25,7 @@
     }
     // working with DOM
     let bColor = ['#F2E9E6','#E9F2E6','#F2F5F7','#F5F3F2','#F5F2F5','#FAF2ED','#F4FAF2'];
-    let offset_x = 1.9;
+    let offset_x = 1.3;
     let offset_y = -0.5;
     b.forEach((i, index) => {
         let row = addDE({

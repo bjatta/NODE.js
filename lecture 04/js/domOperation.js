@@ -93,7 +93,8 @@ function removeClass(el, className) {
         let obj = document.createElement(newObject.tag);
         obj = obj || document.createElement('div');
         let number = (newObject.text.length>2?newObject.text[0]+newObject.text[1]:newObject.text[0]);
-        newObject.text?obj.innerHTML=number+'<span class="card-suit">'+newObject.text[newObject.text.length-1]+'</span>':'';
+        newObject.text?obj.innerHTML=number+'<br><span class="card-suit">'+newObject.text[newObject.text.length-1]+'</span>':'';
+        console.log(obj.innerHTML,number);
         newObject.parent.appendChild(obj);
         obj.className+=newObject.class;
         newObject.top?obj.style.top = newObject.top+'em':{};
