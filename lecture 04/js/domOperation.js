@@ -53,14 +53,21 @@ function removeClass(el, className) {
         return a;
     }
     window.ra?window._ra= _ra_:window.ra= _ra_;
-    let _newDOMdiv_ = (_DOMelement,text,_class_) => {
-        let obj = document.createElement('div');
+    let _newDOMdiv_ = (_DOMelement,_typeOfDOMElement_,text,_class_,_left_,_zIndex_) => {
+        _typeOfDOMElement_ = _typeOfDOMElement_ || 'div';
+        let obj = document.createElement(_typeOfDOMElement_);
+        obj = obj || document.createElement('div');
         text = document.createTextNode(text);
         _class_ = _class_ || 'cards';
+        _left_ = _left_ || 0;
+        _zIndex_ = _zIndex_ || 0;
         obj.appendChild(text);
         _DOMelement = _DOMelement || document.querySelector('body');
         _DOMelement.appendChild(obj);
         obj.className+=_class_;
+        obj.style.left=_left_+'em';
+        obj.style.zIndex = _zIndex_;
+        return obj;
     }
     window.addDE?window._addDE=_newDOMdiv_:window.addDE=_newDOMdiv_;
 })();

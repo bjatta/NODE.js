@@ -27,11 +27,19 @@
         }
     }
     b.forEach((i,index)=>{
-        console.log(i);
         let mainSection = document.querySelector('div.column');
-        console.log(mainSection);
-        i.forEach((cardText)=>addDE(mainSection,cardText));
-        console.log(c[index]);
+        let row = addDE(mainSection,'section','&nbsp;','row');
+        let showCardBox = (cardText,index)=>{
+            const regex = /[♢♡]/g;
+            cardText.match(regex)
+                ?addDE(row,'div',cardText,'red-text cards',index*1.7,index)
+                :addDE(row,'div',cardText,'cards',index*1.7,index);
+        };
+        console.log(i);
+        i.forEach(showCardBox);
+        row = addDE(document.querySelector('body'),'div','','column2');
+        row = addDE(row,'section','','row');
+        c[index].forEach(showCardBox);
     });
 }
 )(ra());
