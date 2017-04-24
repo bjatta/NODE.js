@@ -2,21 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Chain adding function</title>
 </head>
-<body>
-	<script>
-
-function add(n){
-	const fn = x => add (n + x);
-	fn.valueOf = () => n;
-	return fn;
-}
-
-console.log(add(1), 1);
-console.log(add(1)(2), 3);
-console.log(add(1)(2)(3), 6);
-console.log(add(1)(2)(3), 6);
-	</script>
-</body>
+	<body>
+		<h1>Chain adding function</h1>
+		<script>
+			function add(n){
+				const fn = x => add (n + x);
+				fn.valueOf = () => n;
+				return fn;
+			}
+			console.log(add(1), 1);
+			console.log(add(1)(2), 3);
+			console.log(add(1)(2)(3), 6);
+			console.log(add(1)(2)(3), 6);
+		</script>
+		<script>
+			function add(...n){
+				let n2 = n.length
+					? n.reduce((p,c)=>p+c,0)
+					: n;
+				const fn = x => add (n2 + x);
+				fn.valueOf = () => n2;
+				return fn;
+			}
+			console.log(add(2, 5));
+			console.log(add(2)(5));
+		</script>
+	</body>
 </html>
