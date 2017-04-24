@@ -20,27 +20,53 @@ function toggleCode(el,pictureName) {
 
 function hasClass(el, className) {
     if (el.classList)
-        return el.classList.contains(className)
+        return el.classList.contains(className);
     else
         return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
 }
 
 function addClass(el, className) {
     if (el.classList)
-        el.classList.add(className)
+        el.classList.add(className);
     else if (!hasClass(el, className)) el.className += " " + className
 }
 
 function removeClass(el, className) {
     if (el.classList)
-        el.classList.remove(className)
+        el.classList.remove(className);
     else if (hasClass(el, className)) {
-        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
         el.className=el.className.replace(reg, ' ')
     }
 }
 ;(()=>{
     "use strict";
+    var extend = function () {
+        var extended = {};
+        var deep = false;
+        var i = 0;
+        var length = arguments.length;
+        if ( Object.prototype.toString.call( arguments[0] ) === '[object Boolean]' ) {
+            deep = arguments[0];
+            i++;
+        }
+        var merge = function (obj) {
+            for ( var prop in obj ) {
+                if ( Object.prototype.hasOwnProperty.call( obj, prop ) ) {
+                    if ( deep && Object.prototype.toString.call(obj[prop]) === '[object Object]' ) {
+                        extended[prop] = extend( true, extended[prop], obj[prop] );
+                    } else {
+                        extended[prop] = obj[prop];
+                    }
+                }
+            }
+        };
+        for ( ; i < length; i++ ) {
+            var obj = arguments[i];
+            merge(obj);
+        }
+        return extended;
+    };
     let _r_ = (n) => Math.round(Math.random()*n);
     window.r?window._r= _r_:window.r= _r_;
     let _ra_ = (n,m)=>{
@@ -51,25 +77,30 @@ function removeClass(el, className) {
             a.push(r(m));
         }
         return a;
-    }
+    };
     window.ra?window._ra= _ra_:window.ra= _ra_;
-    let _newDOMdiv_ = (_DOMelement,_typeOfDOMElement_,text,_class_,_left_,_top_,_zIndex_) => {
-        _typeOfDOMElement_ = _typeOfDOMElement_ || 'div';
-        let obj = document.createElement(_typeOfDOMElement_);
+    let _newDOMdiv_ = (newObject) => {
+        newObject = {
+            parent: newObject.parent || document.querySelector('body'),
+               tag: newObject.tag || 'div',
+              text: newObject.text || '',
+             class: newObject.class || 'cards',
+               top: newObject.top || 0,
+              left: newObject.left || 0,
+            zIndex: newObject.zIndex || 0,
+            bColor: newObject.bColor || 'white',
+        };
+        let obj = document.createElement(newObject.tag);
         obj = obj || document.createElement('div');
-        text = document.createTextNode(text);
-        _class_ = _class_ || 'cards';
-        _left_ = _left_ || 0;
-        _zIndex_ = _zIndex_ || 0;
-        _top_ = _top_ || 0;
-        obj.appendChild(text);
-        _DOMelement = _DOMelement || document.querySelector('body');
-        _DOMelement.appendChild(obj);
-        obj.className+=_class_;
-        _top_?obj.style.top = _top_+'em':{};
-        _left_?obj.style.left=_left_+'em':{};
-        _zIndex_?obj.style.zIndex = _zIndex_:{};
+        let number = (newObject.text.length>2?newObject.text[0]+newObject.text[1]:newObject.text[0]);
+        newObject.text?obj.innerHTML=number+'<span class="card-suit">'+newObject.text[newObject.text.length-1]+'</span>':'';
+        newObject.parent.appendChild(obj);
+        obj.className+=newObject.class;
+        newObject.top?obj.style.top = newObject.top+'em':{};
+        newObject.left?obj.style.left=newObject.left+'em':{};
+        newObject.zIndex?obj.style.zIndex = newObject.zIndex:{};
+        newObject.bColor?obj.style.backgroundColor = newObject.bColor:{};
         return obj;
-    }
+    };
     window.addDE?window._addDE=_newDOMdiv_:window.addDE=_newDOMdiv_;
 })();
