@@ -22,3 +22,7 @@ p.task {
     text-align: justify;
     padding: 1em;
 }
+section.row{
+    clear: both;
+    width: 100%;
+}
