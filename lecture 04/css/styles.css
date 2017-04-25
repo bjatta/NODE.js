@@ -1,6 +1,7 @@
 body * {
     box-sizing: border-box;
-    font-family: Helvetica,sans-serif;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section#main-container.main-container {
@@ -14,7 +15,6 @@ section#main-container.main-container {
 .column {
     width: 90%;
     position: relative;
-    float: left;
     padding: 0;
 }
 h1,h2,h3 {
@@ -73,9 +73,10 @@ div#full-screen.code.full-screen{
     border-radius: 0.3em;
     font-weight: bold;
     padding: 0em;
+    padding-left: 0.05em;
     background: white;
     margin: 0em;
-    font-size: 1.2em;
+    user-select: none;
 }
 div.red-text{
     color: red;
@@ -102,7 +103,25 @@ section.row2 {
 }
 span.card-suit{
     font-size: 0.9em;
-    padding-left: 0.15em;
     position: relative;
     top: -0.6em;
+}
+div.left-corner,div.right-corner {
+    display: inline;
+    float: left;
+    margin: 0em;
+    text-align: center;
+    user-select: none;
+    padding: 0em;
+    font-size: 0.9em;
+    border-radius: 1em;
+    font-family: 'Noticia Text', serif;
+    vertical-align: top;
+    height: 20%;
+}
+div.right-corner{
+    transform: rotate( -180deg );
+    position: absolute;
+    bottom: 0.05em;
+    right: 0.05em;
 }

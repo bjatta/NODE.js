@@ -1,6 +1,3 @@
-/**
- * Created by Bjatta on 21.04.2017.
- */
 function toggleCode(el,pictureName) {
     let nextEl = document.querySelector('div[id="full-screen"]');
     let body   = document.querySelector('section[id="main-container"]');
@@ -15,9 +12,7 @@ function toggleCode(el,pictureName) {
         addClass(nextEl,'visible');
         addClass(body,'muted');
     }
-
 }
-
 function hasClass(el, className) {
     if (el.classList)
         return el.classList.contains(className);
@@ -35,38 +30,12 @@ function removeClass(el, className) {
     if (el.classList)
         el.classList.remove(className);
     else if (hasClass(el, className)) {
-        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+        let reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
         el.className=el.className.replace(reg, ' ')
     }
 }
 ;(()=>{
     "use strict";
-    var extend = function () {
-        var extended = {};
-        var deep = false;
-        var i = 0;
-        var length = arguments.length;
-        if ( Object.prototype.toString.call( arguments[0] ) === '[object Boolean]' ) {
-            deep = arguments[0];
-            i++;
-        }
-        var merge = function (obj) {
-            for ( var prop in obj ) {
-                if ( Object.prototype.hasOwnProperty.call( obj, prop ) ) {
-                    if ( deep && Object.prototype.toString.call(obj[prop]) === '[object Object]' ) {
-                        extended[prop] = extend( true, extended[prop], obj[prop] );
-                    } else {
-                        extended[prop] = obj[prop];
-                    }
-                }
-            }
-        };
-        for ( ; i < length; i++ ) {
-            var obj = arguments[i];
-            merge(obj);
-        }
-        return extended;
-    };
     let _r_ = (n) => Math.round(Math.random()*n);
     window.r?window._r= _r_:window.r= _r_;
     let _ra_ = (n,m)=>{
@@ -94,7 +63,6 @@ function removeClass(el, className) {
         obj = obj || document.createElement('div');
         let number = (newObject.text.length>2?newObject.text[0]+newObject.text[1]:newObject.text[0]);
         newObject.text?obj.innerHTML=number+'<br><span class="card-suit">'+newObject.text[newObject.text.length-1]+'</span>':'';
-        console.log(obj.innerHTML,number);
         newObject.parent.appendChild(obj);
         obj.className+=newObject.class;
         newObject.top?obj.style.top = newObject.top+'em':{};

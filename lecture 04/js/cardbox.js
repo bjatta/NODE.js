@@ -1,4 +1,3 @@
-/*Created by Bjatta on 24.04.2017.*/
 ;(()=> {
     "use strict";
     console.log('let\'s play a game');
@@ -14,22 +13,28 @@
     };
     let c = []; // original, sorted array
     for (let index = 0; index < (r(4) + 2); index++) c.push(CardBoxSet());
-    let b = []; // array for played cards
+    let b = []; // array for played cards filled in random order 6-42 cards in each
     c.forEach((i) => console.log(i));
     for (let i = 0; i < c.length; i++) {
-        for (let j = 0; j < r(36); j++) {
+        for (let j = 0; j < (r(36)+6); j++) {
             let card = c[i].splice(r(c[i].length - 1), 1)[0];
             b[i] = b[i] || [];
             b[i].push(card);
         }
     }
     // working with DOM
-    let bColor = ['#F2E9E6','#E9F2E6','#F2F5F7','#F5F3F2','#F5F2F5','#FAF2ED','#F4FAF2'];
-    let offset_x = 1.3;
-    let offset_y = -0.5;
+    let bColor = ['#F2E9E6',
+        '#E9F2E6',
+        '#F2F5F7',
+        '#F5F3F2',
+        '#F5F2F5',
+        '#FAF2ED',
+        '#F4FAF2'];
+    let offset_x = 1;
+//    let offset_y = -0.5;
     b.forEach((i, index) => {
         let row = addDE({
-            parent: document.querySelector('div.column'),
+            parent: document.querySelector('section[id="main-container"]'),
                tag: 'section',
              class: 'row',
             bColor: '#298057',
@@ -38,17 +43,26 @@
             const regex = /[♦♥]/g;
             let redCardSuit = '';
             cardText.match(regex)
-                ? redCardSuit = 'red-text cards'
-                : redCardSuit = 'cards';
-            addDE({
+                ? redCardSuit = 'red-text'
+                : redCardSuit = '';
+            let currentCard = addDE({
                     parent: row,
-                     class: redCardSuit,
                       left: indexCard * offset_x,
-                      text: cardText,
                     zIndex: indexCard,
                     bColor: bColor[index],
-                }
-            );
+                });
+            addDE({
+                parent: currentCard,
+                class: redCardSuit+' left-corner',
+                text: cardText,
+                bColor: bColor[index],
+            });
+            addDE({
+                parent: currentCard,
+                class: redCardSuit+' right-corner',
+                text: cardText,
+                bColor: bColor[index],
+            });
         };
         console.log(i);
         i.forEach(showCardBox);
