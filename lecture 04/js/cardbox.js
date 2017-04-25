@@ -55,13 +55,11 @@
                 parent: currentCard,
                 class: redCardSuit+' left-corner',
                 text: cardText,
-                bColor: bColor[index],
             });
             addDE({
                 parent: currentCard,
                 class: redCardSuit+' right-corner',
                 text: cardText,
-                bColor: bColor[index],
             });
         };
         console.log(i);

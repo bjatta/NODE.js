@@ -109,7 +109,7 @@ span.card-suit{
 div.left-corner,div.right-corner {
     display: inline;
     float: left;
-    margin: 0em;
+    margin-top: -0.2em;
     text-align: center;
     user-select: none;
     padding: 0em;
@@ -119,10 +119,11 @@ div.left-corner,div.right-corner {
     vertical-align: top;
     height: 20%;
     line-height: 1.2;
+    background-color: transparent;
 }
 div.right-corner{
     transform: rotate( -180deg );
     position: absolute;
-    bottom: 0;
+    bottom: -0.2em;
     right: 0.15em;
 }

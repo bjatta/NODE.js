@@ -57,7 +57,7 @@ function removeClass(el, className) {
                top: newObject.top || 0,
               left: newObject.left || 0,
             zIndex: newObject.zIndex || 0,
-            bColor: newObject.bColor || 'white',
+            bColor: newObject.bColor || 'transparent',
         };
         let obj = document.createElement(newObject.tag);
         obj = obj || document.createElement('div');
