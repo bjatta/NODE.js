@@ -118,10 +118,11 @@ div.left-corner,div.right-corner {
     font-family: 'Noticia Text', serif;
     vertical-align: top;
     height: 20%;
+    line-height: 1.2;
 }
 div.right-corner{
     transform: rotate( -180deg );
     position: absolute;
-    bottom: 0.05em;
-    right: 0.05em;
+    bottom: 0;
+    right: 0.15em;
 }
