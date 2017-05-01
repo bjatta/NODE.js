@@ -4,7 +4,7 @@
 ;(() => {
     "use strict";
     let menu = require('./menu.js');
-    exports.header = (res,title) => {
+    exports.header = (res,title,menuItemIndex) => {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(`
 <!DOCTYPE \"html\">
@@ -16,6 +16,6 @@
         <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
     </head>
     <body>`);
-    menu.menu(res,1);
+    menu.menu(res,menuItemIndex);
     }
 })();

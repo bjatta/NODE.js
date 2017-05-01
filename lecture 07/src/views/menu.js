@@ -6,6 +6,7 @@
     let data = require('../data/data.js');
 exports.menu=(res,active)=>{
     let menu = data.menu();
+    console.log(res);
     res.write(`
 <section class="nav">
     <ol class="menu">

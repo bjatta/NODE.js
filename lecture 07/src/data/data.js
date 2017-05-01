@@ -9,12 +9,12 @@ exports.menu=()=>{
     return [
         {title:'home',
          href:'/'},
+        {title:'main',
+            href:'/main'},
         {title:'about',
             href:'/about'},
         {title:'jumpy',
             href:'/views/jumpy.html'},
-        {title:'main',
-            href:'/main'},
     ];
 }
 })();
