@@ -1,0 +1,23 @@
+body * {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Noticia Text', "Helvetica Neue", Helvetica, Arial, serif;
+}
+section.nav > ol {
+    background-color: rgba(15, 15, 15,0.9);
+}
+section.nav > ol > li.menu-item {
+    display: inline-block;
+    padding: 0.5em;
+    text-decoration: none;
+}
+section.nav > ol > li.menu-item > a{
+    text-decoration: none;
+    color: #fff5dd;
+}
+section.nav > ol > li.menu-item:hover{
+    background-color: #858585;
+}
+section.nav > ol > li.active{
+    background-color: #858585;
+}
