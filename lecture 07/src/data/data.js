@@ -21,12 +21,17 @@
             },
             {
                 title: 'jumpy',
-                href: './views/jumpy.html'
+                href: '/views/jumpy.html'
+            },
+            {
+                title: 'my certificates',
+                href: '/views/certificates.html'
             },
         ];
     };
     exports.getMenuTitle=(url)=> {
         let menu_items = exports.menu();
+        url = url.path || url;
         for (let i = 0; i < menu_items.length; i++) {
             if (menu_items[i].href === url) return menu_items[i].title;
         }

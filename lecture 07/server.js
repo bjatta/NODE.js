@@ -4,7 +4,7 @@
 ;(() => {
     "use strict";
     let http    = require('http');
-    let router  = require('./router');
+    let router  = require('./src/common/router');
     let about   = require('./src/routes/about');
     let root    = require('./src/routes/root');
     let main    = require('./src/routes/main');

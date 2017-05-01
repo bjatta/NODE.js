@@ -6,6 +6,7 @@
     let data = require('../data/data.js');
 exports.menu=(res,url)=>{
     let menu = data.menu();
+    url = url.path || url;
     res.write(`
 <section class="nav">
     <ol class="menu">
@@ -15,7 +16,7 @@ exports.menu=(res,url)=>{
         menu[i].href===url?active_class=' active':active_class = '';
         res.write(`
 <li class="menu-item${active_class}">
-    <a href="${menu[i].href}">${menu[i].title}</a>
+    <a href="${menu[i].href}" class="hvr-wobble-horizontal">${menu[i].title}</a>
 </li>
 `);
     }

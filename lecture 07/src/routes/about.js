@@ -8,10 +8,10 @@
     exports.root = (req, res) => {
         header.header(res,'/about');
         res.write(`
-<section id="#main-container">
+<section id="main-container">
+<div class="main-background"
+     style="background: url(../img/background/about.png);"></div>
 <h3> Most humble site page. all awards keep here.</h3>
-<img src="./img/1.png">
-<img src="./img/2.png">
 </section>        
         `);
         footer.footer(res);

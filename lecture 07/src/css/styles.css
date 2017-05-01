@@ -31,22 +31,7 @@ section.nav > ol > li.menu-item:hover{
 section.nav > ol > li.active{
     background-color: #858585;
 }
-section#main-container{
-    min-height: 90%;
-    position: relative;
-}
-div.main-background {
-    opacity: 0.2;
-    width: 100%;
-    height: 100%;
-    z-index: -5;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-img {
-    max-height: 100%;
-    max-width: 100%;
+section#main-container {
+    /*background-color: rgba(255, 255, 255,0.3);*/
+    opacity: 0.5;
 }

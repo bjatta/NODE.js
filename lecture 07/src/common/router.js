@@ -4,8 +4,8 @@
 ;(() => {
     "use strict";
     let handlerFactory = require('./handler');
-    let header = require('./src/views/header');
-    let footer = require('./src/views/footer.js');
+    let header = require('../views/header');
+    let footer = require('../views/footer.js');
     let fs = require('fs');
     let parser = require('url');
     let handlers = {};
@@ -27,7 +27,7 @@
 
     exports.missing = function(req,res) {
         let url = parser.parse(req.url, true);
-        let path = __dirname + "/public" + url.pathname;
+        let path = __dirname + "/../../public" + url.pathname;
         try {
             let data = fs.readFileSync(path);
             let mime = req.headers.accept || 'text/html';
