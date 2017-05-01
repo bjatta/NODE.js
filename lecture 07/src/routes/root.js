@@ -6,10 +6,11 @@
     let header = require('../views/header.js');
     let footer = require('../views/footer.js');
     exports.root = (req, res) => {
-        header.header(res,'ROOT',0);
+        header.header(res,'/');
         res.write(`
 <section id="#main-container">
 <h3> ROOT site page. all time starts here.</h3>
+<img src="./img/Nodejs-2.png">
 </section>        
         `);
         footer.footer(res);

@@ -6,10 +6,12 @@
     let header = require('../views/header.js');
     let footer = require('../views/footer.js');
     exports.root = (req, res) => {
-        header.header(res,'ROOT',2);
+        header.header(res,'/about');
         res.write(`
 <section id="#main-container">
 <h3> Most humble site page. all awards keep here.</h3>
+<img src="./img/1.png">
+<img src="./img/2.png">
 </section>        
         `);
         footer.footer(res);

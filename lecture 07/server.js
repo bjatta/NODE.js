@@ -16,7 +16,7 @@
 
     // We need a server which relies on our router
     let server = http.createServer(function (req, res) {
-        let handler = router.route(req);
+        let handler = router.route(req,res);
         handler.process(req, res);
     });
 

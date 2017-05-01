@@ -3,10 +3,15 @@
  */
 ;(() => {
     "use strict";
-    exports.footer = (res) => {
-        res.write(`
+    exports.footer = (res,mime) => {
+        mime = mime || 'text/html';
+
+        if (mime.indexOf('text/html') !== -1) {
+            res.write(`
+<footer class="footer">(c) bj bjatta at 2017 NODE.js ЦОТ</footer>
 </body>
 </html>`);
+        }
         res.end();
     }
 })();
