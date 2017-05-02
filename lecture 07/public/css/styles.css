@@ -4,6 +4,7 @@ body * {
     font-family: 'Noticia Text', "Helvetica Neue", Helvetica, Arial, serif;
 }
 section.nav > ol, footer.footer {
+    position: relative;
     background-color: rgba(15,15,15,0.9);
 }
 footer.footer{
@@ -15,8 +16,7 @@ footer.footer{
     text-align: center;
     vertical-align: middle;
   }
-
-  section.nav > ol > li.menu-item {
+section.nav > ol > li.menu-item {
     display: inline-block;
     padding: 0.5em;
     text-decoration: none;
@@ -30,6 +30,7 @@ section.nav > ol > li.menu-item:hover{
 }
 section.nav > ol > li.active{
     background-color: #858585;
+    vertical-align: middle;
 }
 section#main-container{
     min-height: 90%;
@@ -49,4 +50,13 @@ div.main-background {
 img {
     max-height: 100%;
     max-width: 100%;
+}
+section.header li.login {
+    position:absolute;
+    right: 0%;
+}
+span.menu-item-icon{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin:0 0.5em;
 }

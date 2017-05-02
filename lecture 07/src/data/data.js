@@ -9,23 +9,28 @@
         return [
             {
                 title: 'home',
-                href: '/'
+                 icon: '⌂',
+                 href: '/'
             },
             {
                 title: 'main',
-                href: '/main'
+                 icon: '汜',
+                 href: '/main'
             },
             {
                 title: 'about',
-                href: '/about'
+                 icon: 'ℹ',
+                 href: '/about'
             },
             {
                 title: 'jumpy',
-                href: '/views/jumpy.html'
+                 icon: '跃',
+                 href: '/views/jumpy.html'
             },
             {
                 title: 'my certificates',
-                href: '/views/certificates.html'
+                 icon: '&#xe333',
+                 href: '/views/certificates.html'
             },
         ];
     };
@@ -38,3 +43,11 @@
         return '404';
     };
 })();
+/*
+ U+1F511 🔑 KEY (128273 decimal)
+ U+26BF  ⚿ SQUARED KEY
+ U+1F510 🔐 CLOSED LOCK WITH KEY
+ U+1F512 🔒 LOCK
+ U+1F513 🔓 OPEN LOCK
+ U+1F50F 🔏 LOCK WITH INK PEN
+*/
