@@ -8,6 +8,7 @@
 
         if (mime.indexOf('text/html') !== -1) {
             res.write(`
+</section>        
 <footer class="footer">(c) bj bjatta at 2017 NODE.js ЦОТ</footer>
 </body>
 </html>`);

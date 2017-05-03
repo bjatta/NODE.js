@@ -29,6 +29,9 @@
             res.write(`
 </section>
         `);
+            res.write(`
+<section id="main-container">
+`);
         }
     }
 })();

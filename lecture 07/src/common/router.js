@@ -39,8 +39,11 @@
         } catch (e) {
             return handlerFactory.createHandler(function(req, res) {
                 header.header(res,url,'text/html',404);
-//                res.writeHead(404, {'Content-Type': 'text/html'});
-                res.write("No route registered for " + url.pathname);
+                res.write(`
+<div class="main-background";" ><span class="error-404">404</span></div>                
+<h3>No route registered for:</h3>
+ <div>${url.pathname}</div>
+                `);
                 footer.footer(res,'text/html');
             });
         }

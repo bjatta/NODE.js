@@ -46,6 +46,8 @@ div.main-background {
     left: 0;
     background-repeat: no-repeat;
     background-position: center;
+    text-align: center;
+    vertical-align: middle;
 }
 img {
     max-height: 100%;
@@ -59,4 +61,8 @@ span.menu-item-icon{
     font-size: 1.2em;
     font-weight: bold;
     margin:0 0.5em;
+}
+span.error-404 {
+    font-size: 30em;
+    font-weight: bold;
 }
