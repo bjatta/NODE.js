@@ -1,0 +1,28 @@
+{
+  "name": "simple_server",
+  "version": "0.0.3",
+  "description": "NODE.js simple server with routing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjatta/NODE.js.git"
+  },
+  "keywords": [
+    "node.js",
+    "server",
+    "routing",
+    "simple",
+    "bjatta",
+    "example"
+  ],
+  "author": "bjatta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjatta/NODE.js/issues"
+  },
+  "homepage": "https://github.com/bjatta/NODE.js#readme"
+}

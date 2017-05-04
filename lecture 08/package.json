@@ -1,0 +1,30 @@
+{
+  "name": "node.js_zamoulko_08",
+  "version": "0.0.1",
+  "description": "NODE.js Zamoulko 08 HOME WORK. simple http server on express.IO",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjatta/NODE.js.git"
+  },
+  "keywords": [
+    "express.IO",
+    "NODE.js",
+    "simple",
+    "http",
+    "server"
+  ],
+  "author": "bjatta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjatta/NODE.js/issues"
+  },
+  "homepage": "https://github.com/bjatta/NODE.js#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

@@ -8,7 +8,6 @@
     exports.root = (req, res) => {
         header.header(res,'/main');
         res.write(`
-<div class="main-background" style="background: url(../img/background/main.png);" ></div>
 <h3> MAIN site page. all things happens here.</h3>
         `);
         footer.footer(res);

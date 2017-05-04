@@ -8,8 +8,6 @@
     exports.root = (req, res) => {
         header.header(res,'/');
         res.write(`
-<div class="main-background"
-     style="background: url(../img/background/root.png);"></div>
 <h3> ROOT site page. all time starts here.</h3>
 <!--<img src="../img/1.png">-->
         `);

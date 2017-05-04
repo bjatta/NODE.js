@@ -5,14 +5,11 @@
     "use strict";
     let menu = require('./menu.js');
     let data = require('../data/data');
-    exports.header = (res,url,mime,status) => {
-        mime = mime || 'text/html';
-        status = status || 200;
-        if (mime.indexOf('text/html') !== -1) mime = 'text/html';
-        res.writeHead(status, {'Content-Type': mime});
-        if (mime.indexOf('text/html') !== -1) {
-            res.write(`
-<!DOCTYPE "html">
+    exports.header = (res,url) => {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(`
+<!DOCTYPE "html">`);
+        res.write(`    
 <html>
     <head>
         <meta charset="UTF-8">
@@ -25,13 +22,13 @@
     <body>
 <section class="header">    
     `);
-            menu.menu(res, url);
-            res.write(`
+        menu.menu(res, url);
+        res.write(`
 </section>
         `);
-            res.write(`
+        res.write(`
+<div class="main-background"></div>
 <section id="main-container">
 `);
-        }
     }
 })();
