@@ -82,3 +82,44 @@ div#main-container div.error-list {
     overflow-wrap: hyphenate;
     width: 30%;
 }
+img.user-avatar.user-info{
+    max-width: 20em;
+    max-height: 20em;
+    vertical-align: middle;
+    display: block;
+}
+div.user-info{
+    display: inline-block;
+    position: relative;
+    margin: 1em;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(15,15,15,0.9);
+    color: #fff5dd;
+}
+div.user-info > span.user-name{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(15,15,15,0.7);
+    min-width: 100%;
+}
+div.user-info > span.e-mail{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(15,15,15,0.7);
+    min-width: 100%;
+}
+ul.users-list *{
+    list-style: none;
+    display: inline-block;
+}

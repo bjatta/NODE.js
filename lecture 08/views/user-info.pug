@@ -1,0 +1,7 @@
+extends layout
+block content
+    h1= title
+    p INFORMATION #{title}
+    p #{mainContent || ''}
+    block singleUserInfo
+        include singleUserInfo

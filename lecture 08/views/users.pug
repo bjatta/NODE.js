@@ -1,0 +1,11 @@
+extends layout
+block content
+    h1= title
+    p site users list at #{title}
+    p #{mainContent || ''}
+    if users && users.length
+        ul.users-list
+            each user in users
+                li.user-in-list
+                    block singleUserInfo
+                        include singleUserInfo

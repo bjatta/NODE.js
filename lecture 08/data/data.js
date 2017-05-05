@@ -3,6 +3,11 @@
  */
 ;(() => {
     "use strict";
+    let users = [
+        {name:'anonymous'   ,email:'anonymous@cia.us'},
+        {name:'bjatta'      ,email:'me@bjatta.ru'},
+        {name:'admin'       ,email:'admin@trainingcenter.by'},
+    ];
     exports.data=()=>{
     };
     exports.menu=()=> {
@@ -46,6 +51,19 @@
             if (menu_items[i].href === url) return menu_items[i].title;
         }
         return '404';
+    };
+    exports.getUser=(username)=>{
+        username = username || 'anonymous';
+        let userIs=users[0];
+        users.forEach((user)=> {
+            if (user.name === username) {
+                userIs = user;
+            }
+        });
+        return userIs;
+    };
+    exports.getAllUsers=()=>{
+      return users;
     };
 })();
 /*

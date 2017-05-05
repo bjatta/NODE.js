@@ -18,8 +18,8 @@ html
                                 li.menu-item.hvr-wobble-horizontal
                                     a(href=item.href)= item.title
                         li.menu-item.login.locked(id="menu-item-login")
-                            if userName
-                                a(href='/users/'+userName)=userName
+                            if user && user.name
+                                a(href='/users/'+user.name)=user.name
                             else
                                 a(href='/users/login')='🔑'
         div.main-background(style="background-image: url("+ (bUrl || '/images/background/root.png')+");")

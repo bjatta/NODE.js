@@ -1,0 +1,9 @@
+//
+   Created by Bjatta on 05.05.2017.
+block singleUserInfo
+    if user
+        a(href='/users/' + user.name)
+            div.user-info
+                span.user-name= user.name
+                img.user-avatar.user-info(src='/images/users/' + user.name + '.jpg')
+                span.e-mail=user.email
