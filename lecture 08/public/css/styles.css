@@ -3,15 +3,16 @@ body * {
     margin: 0;
     font-family: 'Noticia Text', "Helvetica Neue", Helvetica, Arial, serif;
 }
-body {
-    min-height: 100%;
-}
 section.nav > ol.menu, footer.footer {
     position: relative;
     background-color: rgba(15,15,15,0.9);
 }
+body {
+    margin-bottom: 5em;
+}
 footer.footer{
-    position: absolute;
+    position: fixed;
+    right: 0.5em;
     bottom: 0.5em;
     padding: 0.5em;
     text-decoration: none;
@@ -38,8 +39,9 @@ section.nav > ol.menu > li.active{
     background-color: #858585;
     vertical-align: middle;
 }
-section#main-container{
+section#main-container.main-container{
     position: relative;
+    min-height: calc(100% - 5em);
 }
 div.main-background {
     opacity: 0.2;
@@ -122,4 +124,13 @@ div.user-info > span.e-mail{
 ul.users-list *{
     list-style: none;
     display: inline-block;
+}
+div.single-user-description{
+    display: inline-block;
+    margin: 0;
+    float: right;
+}
+div.user-info-description{
+    display: inline-block;
+    margin: 0;
 }

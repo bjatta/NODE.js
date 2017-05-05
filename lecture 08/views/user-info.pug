@@ -3,5 +3,9 @@ block content
     h1= title
     p INFORMATION #{title}
     p #{mainContent || ''}
-    block singleUserInfo
-        include singleUserInfo
+    div.row
+        div.single-user-description
+            include singleUserInfo
+        div.user-info-description
+            h1=user.descriptionTitle
+            p=user.description

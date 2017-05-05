@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
     let urlParse = req.originalUrl.split('/');
     let username = urlParse.length?urlParse[urlParse.length-1]:'anonymous';
     let user     = data.getUser(username);
-    console.log(user);
     res.render('user-info', {
         title: username || data.getMenuTitle('/users'),
          menu: data.menu(),
