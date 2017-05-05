@@ -6,14 +6,24 @@ html
         link(rel='stylesheet', href='/css/styles.css')
         link(rel='stylesheet', href='/css/hover-min.css')
     body
+        block nav
             section.header
                 section.nav
                     ol.menu
                         each item in menu
-                            li.menu-item.hvr-wobble-horizontal
-                                a(href=item.href)= item.title
-                        li.menu-item.login.locked(id="menu-item-login") 🔑
-    div.main-background(style="background-image: url("+ (bUrl || '/images/background/root.png')+");")
-    block content
-block footer
-    footer.footer (c) bj bjatta at 2017 NODE.js ЦОТ
+                            if title == item.title
+                                li.menu-item.active
+                                    a(href=item.href)= item.title
+                            else
+                                li.menu-item.hvr-wobble-horizontal
+                                    a(href=item.href)= item.title
+                        li.menu-item.login.locked(id="menu-item-login")
+                            if userName
+                                a(href='/users/'+userName)=userName
+                            else
+                                a(href='/users/login')='🔑'
+        block main-background
+        div.main-background(style="background-image: url("+ (bUrl || '/images/background/root.png')+");")
+        block content
+        block foot
+            footer.footer (c) bj bjatta at 2017 NODE.js ЦОТ

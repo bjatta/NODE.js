@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
         title: data.getMenuTitle('/users'),
         menu : data.menu(),
         bUrl : '/images/background/users.png',
+  mainContent: ' Here will be an all users list. May be anytime later.',
     });
 });
 

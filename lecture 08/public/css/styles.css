@@ -18,7 +18,7 @@ footer.footer{
     color: #fff5dd;
     text-align: center;
     vertical-align: middle;
-    width: 100%;
+    width: calc(100% - 1em);
   }
 section.nav > ol.menu > li.menu-item {
     display: inline-block;
