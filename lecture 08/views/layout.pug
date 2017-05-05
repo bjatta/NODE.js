@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noticia+Text")
+        link(rel='stylesheet', href='/css/styles.css')
+        link(rel='stylesheet', href='/css/hover-min.css')
+    body
+            section.header
+                section.nav
+                    ol.menu
+                        each item in menu
+                            li.menu-item.hvr-wobble-horizontal
+                                a(href=item.href)= item.title
+                        li.menu-item.login.locked(id="menu-item-login") 🔑
+    div.main-background(style="background-image: url("+ (bUrl || '/images/background/root.png')+");")
+    block content
+block footer
+    footer.footer (c) bj bjatta at 2017 NODE.js ЦОТ
