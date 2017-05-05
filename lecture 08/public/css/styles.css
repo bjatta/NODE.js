@@ -25,11 +25,13 @@ section.nav > ol.menu > li.menu-item {
     padding: 0.5em;
     text-decoration: none;
 }
-section.nav > ol.menu > li.menu-item > a{
+section.nav > ol.menu > li.menu-item > a,
+    footer a{
     text-decoration: none;
     color: #fff5dd;
 }
-section.nav > ol.menu > li.menu-item:hover{
+section.nav > ol.menu > li.menu-item:hover,
+    footer a:hover{
     background-color: #858585;
 }
 section.nav > ol.menu > li.active{
@@ -68,7 +70,15 @@ span.menu-item-icon{
     font-weight: bold;
     margin:0 0.5em;
 }
+span.error-status{
+    color: #df0000;
+}
 span.error-404 {
     font-size: 30em;
     font-weight: bold;
+}
+div#main-container div.error-list {
+    display: inline-block;
+    overflow-wrap: hyphenate;
+    width: 30%;
 }

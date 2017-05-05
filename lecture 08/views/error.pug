@@ -1,6 +1,10 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+    if url
+        h2=url
+    h1
+        span.error-status=error.status+' — '
+        span.error-message=message
+    div.error-list
+        pre #{error.stack}

@@ -22,8 +22,11 @@ html
                                 a(href='/users/'+userName)=userName
                             else
                                 a(href='/users/login')='🔑'
-        block main-background
         div.main-background(style="background-image: url("+ (bUrl || '/images/background/root.png')+");")
-        block content
-        block foot
-            footer.footer (c) bj bjatta at 2017 NODE.js ЦОТ
+        section#main-container
+            block content
+        footer.footer (c) by
+            a(href='http://bjata.ru',target='_blank')=' bjatta '
+            at 2017
+            a(href='https://nodejs.org',target='_blank')=' NODE.js '
+            span='ЦОТ'

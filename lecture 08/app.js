@@ -50,6 +50,7 @@ app.use(function(err, req, res, next) {
       title: data.getMenuTitle('/'),
       menu : data.menu(),
       bUrl : '/images/background/error.gif',
+      url  : req.url,
   });
 });
 
