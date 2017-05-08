@@ -85,8 +85,6 @@ div#main-container div.error-list {
     width: 30%;
 }
 img.user-avatar.user-info{
-    max-width: 20em;
-    max-height: 20em;
     vertical-align: middle;
     display: block;
 }
@@ -98,6 +96,7 @@ div.user-info{
     text-align: center;
     background-color: rgba(15,15,15,0.9);
     color: #fff5dd;
+    overflow: hidden;
 }
 div.user-info > span.user-name{
     display: inline-block;
@@ -109,6 +108,7 @@ div.user-info > span.user-name{
     vertical-align: middle;
     background-color: rgba(15,15,15,0.7);
     min-width: 100%;
+    padding: 0.25em;
 }
 div.user-info > span.e-mail{
     display: inline-block;
@@ -120,17 +120,27 @@ div.user-info > span.e-mail{
     vertical-align: middle;
     background-color: rgba(15,15,15,0.7);
     min-width: 100%;
+    padding: 0.25em;
 }
-ul.users-list *{
+ul.users-list {
     list-style: none;
     display: inline-block;
+}
+li.user-in-list{
+    max-width: 25%;
+    display: inline-block;
+    min-width: 9em;
 }
 div.single-user-description{
     display: inline-block;
     margin: 0;
-    float: right;
+    float: left;
+    width: 25%;
+    min-width: 9.5em;
 }
 div.user-info-description{
     display: inline-block;
     margin: 0;
+    width: 75%;
+    float: left;
 }
