@@ -2,5 +2,5 @@ if user
     a(href='/users/' + user.name)
         div.user-info
             span.user-name= user.name
-            img.user-avatar.user-info(src='/images/users/' + user.name + '.jpg')
+            img.user-avatar.user-info(src=''+user.avatar)
             span.e-mail=user.email

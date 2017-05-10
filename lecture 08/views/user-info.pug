@@ -7,5 +7,31 @@ block content
         div.single-user-description
             include singleUserInfo
         div.user-info-description
-            h1=user.descriptionTitle
-            p=user.description
+            h1
+                span.label='name:'
+                span.content=user.name
+            h1
+                span.label='user name:'
+                span.content=user.username
+            h1
+                span.label='e-mail:'
+                span.content=user.email
+            h1
+                span.label='DOB:'
+                span.content=user.dob
+            h1
+                span.label='phone:'
+                span.content=user.phone
+            h1 address:
+                h2=user.address.street
+                h2=user.address.suit
+                h2=user.address.city
+                h2=user.address.zipcode
+            h1
+                span.label='www:'
+                a(href='https://'+user.website,target='_blank')
+                    span.content=user.website
+            h1 company:
+                h2=user.company.name
+                h2=user.company.catchPhrase
+                h2=user.company.bs

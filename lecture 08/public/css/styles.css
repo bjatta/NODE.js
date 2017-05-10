@@ -87,6 +87,8 @@ div#main-container div.error-list {
 img.user-avatar.user-info{
     vertical-align: middle;
     display: block;
+    min-width: 7em;
+    min-height: 7em;
 }
 div.user-info{
     display: inline-block;
@@ -120,14 +122,14 @@ div.user-info > span.e-mail{
     vertical-align: middle;
     background-color: rgba(15,15,15,0.7);
     min-width: 100%;
-    padding: 0.25em;
+    padding: .25em;
+    font-size: .5em;
 }
 ul.users-list {
     list-style: none;
     display: inline-block;
 }
 li.user-in-list{
-    max-width: 25%;
     display: inline-block;
     min-width: 9em;
 }
@@ -135,7 +137,6 @@ div.single-user-description{
     display: inline-block;
     margin: 0;
     float: left;
-    width: 25%;
     min-width: 9.5em;
 }
 div.user-info-description{
@@ -143,4 +144,21 @@ div.user-info-description{
     margin: 0;
     width: 75%;
     float: left;
+}
+div.user-info-description > h1{
+    position: relative;
+}
+div.user-info-description > h2{
+    position: relative;
+    left: 2em;
+}
+div.user-info-description > h1
+    span.label{
+    position: relative;
+}
+div.user-info-description > h1
+span.content{
+    position: relative;
+    left: 1em;
+    font-weight: normal;
 }
